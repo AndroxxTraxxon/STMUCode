@@ -1,0 +1,29 @@
+/*
+ * main.c
+ *
+ *  Created on: Jan 24, 2016
+ *      Author: david
+ */
+
+#include <stdio.h>
+#include "vector3.h"
+
+int main(int argc, char* args[]){
+	vector3 p = mkVector(1,3,1);
+	vector3 q = mkVector(4,-2,5);
+	vector3 r = mkVector(6,0,-2);
+	vector3 s = mkVector(3,5,-6);
+
+
+	vector3 a = diffVector(q, p);
+	vector3 b = diffVector(r, p);
+	vector3 c = diffVector(s, p);
+
+	double d = dotP(a, crossP(b,c));
+	printV(c);
+	printf("\n");
+	printf("%lf", d);
+	//printf("%.3lf", v3Mag(c)/2);
+	getchar();
+	return 0;
+}

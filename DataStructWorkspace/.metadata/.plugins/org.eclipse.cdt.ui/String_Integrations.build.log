@@ -1,0 +1,20 @@
+11:06:59 **** Incremental Build of configuration Debug for project String_Integrations ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/my_string.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/my_string.d" -MT"src/my_string.o" -o "src/my_string.o" "../src/my_string.c"
+Finished building: ../src/my_string.c
+ 
+Building target: String_Integrations
+Invoking: GCC C Linker
+gcc  -o "String_Integrations"  ./src/main.o ./src/my_string.o   
+Finished building target: String_Integrations
+ 
+
+11:07:00 Build Finished (took 108ms)
+

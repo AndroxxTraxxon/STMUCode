@@ -1,0 +1,11 @@
+/*
+ * main.c
+ *
+ *  Created on: Jan 22, 2016
+ *      Author: david
+ */
+#include "my_string.h"
+
+int main(int argc, char* args[]){
+
+}

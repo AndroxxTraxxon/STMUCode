@@ -1,0 +1,20 @@
+/*
+ * Vector3.h
+ *
+ *  Created on: Jan 24, 2016
+ *      Author: david
+ */
+
+#ifndef VECTOR3_H_
+#define VECTOR3_H_
+
+typedef struct vector3{
+	float x;
+	float y;
+	float z;
+	vector3 direction();
+
+};
+
+
+#endif /* VECTOR3_H_ */

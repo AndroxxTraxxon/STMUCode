@@ -1,0 +1,17 @@
+/*
+ * Vector3.h
+ *
+ *  Created on: Jan 25, 2016
+ *      Author: david
+ */
+
+#ifndef VECTOR3_H_
+#define VECTOR3_H_
+
+class Vector3 {
+public:
+	Vector3();
+	virtual ~Vector3();
+};
+
+#endif /* VECTOR3_H_ */

@@ -1,0 +1,55 @@
+/*
+ * main.c
+ *
+ *  Created on: Jan 22, 2016
+ *      Author: david
+ */
+#include "my_string.h"
+#include "stdlib.h"
+#include <stdio.h>
+
+int main(int argc, char* args[]){
+	string_type h = Create("Hello ", 6);
+	string_type w = Create("World!", 6);
+	string_type str = Concatenate(h,w);
+
+	string_type strings[] = {
+			Create("defunct", 8),
+			Create("abeyance", 9),
+			Create("irrelevant", 11),
+			Create("acquiesce", 10),
+			Create("western", 8),
+			Create("zealous", 8),
+			Create("electric", 9),
+			Create("trihedral", 10),
+			Create("unimodal", 9),
+			Create("vanquish", 9),
+			Create("ambient", 8),
+			Create("abbreviate", 11),
+			Create("edifice", 8),
+			Create("genre", 6),
+			Create("ferrous", 8),
+			Create("breve", 6),
+			Create("brocade", 8)
+	};
+
+
+	Print(str);
+	printf("\n###################");
+	int count = 16;
+	int i;
+	for(i = 0; i < count ; i++){
+			Print(strings[i]);
+	}
+	/*
+	printf("###################");
+	quickSort(strings, 0, count);
+	for(i = 0; i < count ; i++){
+				Print(strings[i]);
+	}
+	*/
+	getchar();
+	return 0;
+}
+
+

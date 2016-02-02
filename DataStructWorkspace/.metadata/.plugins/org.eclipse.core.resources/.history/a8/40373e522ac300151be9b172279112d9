@@ -1,0 +1,13 @@
+/*
+ * main.c
+ *
+ *  Created on: Jan 24, 2016
+ *      Author: david
+ */
+
+#include <stdio.h>
+
+int main(int argc, char* args[]){
+	printf("Hello World!");
+	return 0;
+}

@@ -1,0 +1,17 @@
+/*
+ * main.c
+ *
+ *  Created on: Jan 24, 2016
+ *      Author: david
+ */
+
+#include <stdio.h>
+#include "vector3.h"
+
+int main(int argc, char* args[]){
+	vector3 a = mkVector(0,1,-1);
+	vector3 b = mkvector(-1,0,1);
+	printV(other);
+	getchar();
+	return 0;
+}

@@ -1,0 +1,15 @@
+18:29:04 **** Incremental Build of configuration Debug for project DaMat ****
+make all 
+Building file: ../src/Vector3.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Vector3.d" -MT"src/Vector3.o" -o "src/Vector3.o" "../src/Vector3.cpp"
+Finished building: ../src/Vector3.cpp
+ 
+Building target: DaMat
+Invoking: GCC C++ Linker
+g++  -o "DaMat"  ./src/DaMat.o ./src/Matrix.o ./src/Vector3.o   
+Finished building target: DaMat
+ 
+
+18:29:05 Build Finished (took 416ms)
+

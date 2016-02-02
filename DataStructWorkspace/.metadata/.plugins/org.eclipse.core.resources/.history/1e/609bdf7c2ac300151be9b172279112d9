@@ -1,0 +1,14 @@
+/*
+ * main.c
+ *
+ *  Created on: Jan 24, 2016
+ *      Author: david
+ */
+
+#include <stdio.h>
+#include "vector3.h"
+int main(int argc, char* args[]){
+	vector3 vector = mkVector(1,-8,0);
+	vector3 other = XP(k(), vector);
+	return 0;
+}

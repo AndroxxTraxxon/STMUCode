@@ -53,7 +53,7 @@ int main(int argc, char* args[]){
 
 	quickSort(sortedList, 0, count-1);
 	printf("%lu\n", sizeof(string_type));
-	for(i = 0; i < count; i++){
+	for(i = 0; i r< count; i++){
 			Print(sortedList[i]);
 			printf(" : ");
 			Print(strings[i]);

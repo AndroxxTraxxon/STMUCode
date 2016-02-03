@@ -20,17 +20,6 @@ string_type Create( char *ary, int length){
 	return str;
 }
 
-string_type CreateStr(char *ary){
-	string_type str;
-	int i = 0;
-	while(ary[i++] != '\0')
-	str.length = i;
-	str.capacity = i;
-	str.element = malloc(sizeof(char) * str.length);
-	copyString(str.element, ary, str.length);
-	return str;
-}
-
 string_type Clone(string_type original){
 	string_type str;
 	str.length = original.length;

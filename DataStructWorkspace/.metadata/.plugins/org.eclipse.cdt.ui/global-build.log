@@ -1,0 +1,141 @@
+16:33:07 **** Clean-only build of configuration Debug for project String_Integrations ****
+make clean 
+rm -rf  ./src/main.o ./src/my_string.o  ./src/main.d ./src/my_string.d  String_Integrations
+ 
+16:33:08 **** Build of configuration Debug for project String_Integrations ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function ‘main’:
+../src/main.c:31:4: warning: implicit declaration of function ‘CreateStr’ [-Wimplicit-function-declaration]
+    CreateStr("ferrous"),//14
+    ^
+../src/main.c:31:4: warning: missing braces around initializer [-Wmissing-braces]
+../src/main.c:31:4: warning: (near initialization for ‘strings[14]’) [-Wmissing-braces]
+../src/main.c:31:4: warning: initialization makes pointer from integer without a cast [enabled by default]
+../src/main.c:31:4: warning: (near initialization for ‘strings[14].element’) [enabled by default]
+../src/main.c:32:4: error: incompatible types when initializing type ‘unsigned int’ using type ‘string_type’
+    Create("breve", 6),//15
+    ^
+../src/main.c:33:4: error: incompatible types when initializing type ‘unsigned int’ using type ‘string_type’
+    Create("BROCADE", 8),//16
+    ^
+make: *** [src/main.o] Error 1
+16:34:46 **** Incremental Build of configuration Debug for project String_Integrations ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/my_string.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/my_string.d" -MT"src/my_string.o" -o "src/my_string.o" "../src/my_string.c"
+Finished building: ../src/my_string.c
+ 
+Building target: String_Integrations
+Invoking: GCC C Linker
+gcc  -o "String_Integrations"  ./src/main.o ./src/my_string.o   
+Finished building target: String_Integrations
+ 
+16:34:54 **** Incremental Build of configuration Debug for project String_Integrations ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function ‘main’:
+../src/main.c:31:4: warning: implicit declaration of function ‘CreateStr’ [-Wimplicit-function-declaration]
+    CreateStr("ferrous"),//14
+    ^
+../src/main.c:31:4: warning: missing braces around initializer [-Wmissing-braces]
+../src/main.c:31:4: warning: (near initialization for ‘strings[14]’) [-Wmissing-braces]
+../src/main.c:31:4: warning: initialization makes pointer from integer without a cast [enabled by default]
+../src/main.c:31:4: warning: (near initialization for ‘strings[14].element’) [enabled by default]
+../src/main.c:32:4: error: incompatible types when initializing type ‘unsigned int’ using type ‘string_type’
+    Create("breve", 6),//15
+    ^
+../src/main.c:33:4: error: incompatible types when initializing type ‘unsigned int’ using type ‘string_type’
+    Create("BROCADE", 8),//16
+    ^
+make: *** [src/main.o] Error 1
+16:35:29 **** Incremental Build of configuration Debug for project String_Integrations ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function ‘main’:
+../src/main.c:31:4: warning: implicit declaration of function ‘CreateStr’ [-Wimplicit-function-declaration]
+    CreateStr("ferrous"),//14
+    ^
+../src/main.c:31:4: warning: missing braces around initializer [-Wmissing-braces]
+../src/main.c:31:4: warning: (near initialization for ‘strings[14]’) [-Wmissing-braces]
+../src/main.c:31:4: warning: initialization makes pointer from integer without a cast [enabled by default]
+../src/main.c:31:4: warning: (near initialization for ‘strings[14].element’) [enabled by default]
+../src/main.c:32:4: error: incompatible types when initializing type ‘unsigned int’ using type ‘string_type’
+    Create("breve", 6),//15
+    ^
+../src/main.c:33:4: error: incompatible types when initializing type ‘unsigned int’ using type ‘string_type’
+    Create("BROCADE", 8),//16
+    ^
+make: *** [src/main.o] Error 1
+16:35:48 **** Incremental Build of configuration Debug for project String_Integrations ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function ‘main’:
+../src/main.c:31:4: warning: implicit declaration of function ‘CreateStr’ [-Wimplicit-function-declaration]
+    CreateStr("ferrous"),//14
+    ^
+../src/main.c:31:4: warning: missing braces around initializer [-Wmissing-braces]
+../src/main.c:31:4: warning: (near initialization for ‘strings[14]’) [-Wmissing-braces]
+../src/main.c:31:4: warning: initialization makes pointer from integer without a cast [enabled by default]
+../src/main.c:31:4: warning: (near initialization for ‘strings[14].element’) [enabled by default]
+../src/main.c:32:4: error: incompatible types when initializing type ‘unsigned int’ using type ‘string_type’
+    Create("breve", 6),//15
+    ^
+../src/main.c:33:4: error: incompatible types when initializing type ‘unsigned int’ using type ‘string_type’
+    Create("BROCADE", 8),//16
+    ^
+make: *** [src/main.o] Error 1
+16:36:42 **** Incremental Build of configuration Debug for project String_Integrations ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function ‘main’:
+../src/main.c:31:4: warning: implicit declaration of function ‘CreateStr’ [-Wimplicit-function-declaration]
+    CreateStr("ferrous"),//14
+    ^
+../src/main.c:31:4: warning: missing braces around initializer [-Wmissing-braces]
+../src/main.c:31:4: warning: (near initialization for ‘strings[14]’) [-Wmissing-braces]
+../src/main.c:31:4: warning: initialization makes pointer from integer without a cast [enabled by default]
+../src/main.c:31:4: warning: (near initialization for ‘strings[14].element’) [enabled by default]
+../src/main.c:32:4: error: incompatible types when initializing type ‘unsigned int’ using type ‘string_type’
+    Create("breve", 6),//15
+    ^
+../src/main.c:33:4: error: incompatible types when initializing type ‘unsigned int’ using type ‘string_type’
+    Create("BROCADE", 8),//16
+    ^
+make: *** [src/main.o] Error 1
+16:36:49 **** Incremental Build of configuration Debug for project String_Integrations ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/my_string.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/my_string.d" -MT"src/my_string.o" -o "src/my_string.o" "../src/my_string.c"
+Finished building: ../src/my_string.c
+ 
+Building target: String_Integrations
+Invoking: GCC C Linker
+gcc  -o "String_Integrations"  ./src/main.o ./src/my_string.o   
+Finished building target: String_Integrations
+ 
+16:37:36 **** Incremental Build of configuration Debug for project String_Integrations ****
+make all 
+make: Nothing to be done for `all'.

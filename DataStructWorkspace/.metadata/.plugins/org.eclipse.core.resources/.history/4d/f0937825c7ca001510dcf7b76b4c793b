@@ -31,7 +31,7 @@ int main(int argc, char* args[]){
 			CreateStr("ferrous"),//14
 			CreateStr("breve"),//15
 			CreateStr("BROCADE"),//16
-			CreateStr("bRoCaDeS"),//17
+			CreateStr("brocades"),//17
 			CreateStr("supercalifragilisticexpialidocious", 34)//18
 	};
 

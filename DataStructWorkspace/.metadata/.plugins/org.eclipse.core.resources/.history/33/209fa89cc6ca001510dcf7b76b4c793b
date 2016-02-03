@@ -16,7 +16,7 @@ typedef struct {
 
 /* function prototypes */
 string_type Create( char *ary, int length);
-string_type CreateStr(char *ary);
+string_type Create_Str(char *ary);
 string_type Clone(string_type original);
 void Destroy(string_type str);
 void Print(string_type str);

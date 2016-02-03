@@ -23,7 +23,7 @@ string_type Create( char *ary, int length){
 string_type CreateStr(char *ary){
 	string_type str;
 	int i = 0;
-	while(ary[i++] != '\0');
+	while(ary[i++] != '\0')
 	str.length = i;
 	str.capacity = i;
 	str.element = malloc(sizeof(char) * str.length);

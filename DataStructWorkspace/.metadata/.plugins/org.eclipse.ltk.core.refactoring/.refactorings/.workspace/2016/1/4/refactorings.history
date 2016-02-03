@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;String_Ingegrations&apos; to &apos;String_Integrations&apos;" description="Rename resource &apos;String_Ingegrations&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/String_Ingegrations" name="String_Integrations" stamp="1453480401322" updateReferences="true"/>
-</session>

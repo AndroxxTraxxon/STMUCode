@@ -14,26 +14,28 @@ int main(int argc, char* args[]){
 	string_type combine = Concatenate(h,w);
 
 	string_type strings[] = {
-			Create("defunct", 8),
-			Create("abeyance", 9),
-			Create("irrelevant", 11),
-			Create("acquiesce", 10),
-			Create("western", 8),
-			Create("zealous", 8),
-			Create("electric", 9),
-			Create("trihedral", 10),
-			Create("unimodal", 9),
-			Create("vanquish", 9),
-			Create("ambient", 8),
-			Create("abbreviate", 11),
-			Create("edifice", 8),
-			Create("genre", 6),
-			Create("ferrous", 8),
-			Create("breve", 6),
-			Create("BROCADE", 8),
-			Create("brocades", 9),
-			Create("supercalifragilisticexpialidocious", 34)
+			Create("defunct", 8), //0
+			Create("abeyance", 9),//1
+			Create("irrelevant", 11),//2
+			Create("acquiesce", 10),//3
+			Create("western", 8),//4
+			Create("zealous", 8),//5
+			Create("electric", 9),//6
+			Create("trihedral", 10),//7
+			Create("unimodal", 9),//8
+			Create("vanquish", 9),//9
+			Create("ambient", 8),//10
+			Create("abbreviate", 11),//11
+			Create("edifice", 8),//12
+			Create("genre", 6),//13
+			CreateStr("ferrous"),//14
+			Create("breve", 6),//15
+			Create("BROCADE", 8),//16
+			Create("brocades", 9),//17
+			Create("supercalifragilisticexpialidocious", 34)//18
 	};
+
+
 
 	Print(combine);
 	printf("\n###################\n");

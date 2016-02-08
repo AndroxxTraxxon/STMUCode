@@ -1,6 +1,0 @@
-Proofs with series:
-	1. Proof by Induction
-		a. Prove the base case
-		b. Prove that given any case, the following term will be represented by the stated equation
-	2. Proof by Derivation
-		a. Figure it out. 

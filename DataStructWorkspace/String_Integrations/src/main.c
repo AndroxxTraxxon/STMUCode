@@ -8,13 +8,11 @@
 #include "stdlib.h"
 #include <stdio.h>
 
-int main(int argc, char* args[]){
-	string_type h = CreateStr("Hello ");
-	string_type w = CreateStr("World!");
-	//string_type combine = CreateStr("combination");
-	string_type combine = Concatenate(h,w);
+void printStringList(string_type*, int length);
 
-	string_type strings[] = {
+int main(int argc, char* args[]){
+
+	string_type strings[] = {//make the list of strings
 			CreateStr("defunct"), //0
 			CreateStr("abeyance"),//1
 			CreateStr("irrelevant"),//2
@@ -36,16 +34,13 @@ int main(int argc, char* args[]){
 			CreateStr("supercalifragilisticexpialidocious")//18
 	};
 
-
-
-	Print(combine);
 	printf("\n###################\n");
-	int count = sizeof(strings)/sizeof(string_type);
-	string_type sortedList[count];
+	int count = sizeof(strings)/sizeof(string_type); 				//figure out how long the list is
+	string_type sortedList[count]; 									//make another array, with the same size, so that I can copy stuff into it and sort it
 
 	int i;
 	for(i = 0; i < count ; i++){
-			printf("%s%2d%s", "Element ", i, ": ");
+			printf("%s%3d%s", "Element ", i, ": ");
 			Print(strings[i]);
 			sortedList[i] = Clone(strings[i]);
 			printf("\n");
@@ -54,20 +49,44 @@ int main(int argc, char* args[]){
 	printf("#####################\n");
 
 	quickSort(sortedList, 0, count-1);
-	printf("%s","Sorted List ");
-	printf("#####################\n");
-	for(i = 0; i < count; i++){
-		printf("%s%d%s", "Element ", i, ": ");
-					Print(sortedList[i]);
-			//printf(" : ");
-			//Print(strings[i]);
-			printf("\n");
-	}
-	getchar();
+	printf("%s\n","Sorted List ");
+	printStringList(sortedList, count);
+
+	printf("%s\n", "Choose two words to concatenate from the sorted list...");
+
+	int input = -1, a = -1, b = -1;
+	do{
+		printf("\n%s%s%s%d%s%d%s","Enter a selection for the ",(a==-1)?" first ":" second "," word, ",0," thru ",count-1,":");
+		scanf("%d", &input);
+		if(!(input >=0 && input < count)){
+			printf("%s", "\nInvalid input!");
+
+		}else{
+			if(a == -1){
+				a = input;
+				printf("%s%s%s", "The first word is ", sortedList[a].element,".");
+			}else{
+				b = input;
+				printf("%s%s%s", "The second word is ", sortedList[b].element,".");
+			}
+		}
+	}while(a==-1 || b == -1);
+	string_type concat = Concatenate(sortedList[a], sortedList[b]);
+	printf("\n%s", "The concatenation of the two selected words is ");
+	Print(concat);
+
 	return 0;
+}
+
+void printStringList(string_type* strings, int length){
+	int i;
 	printf("#####################\n");
-	printf("%s\n%s", "Choose two words to concatenate:", "Enter a number, 0 thru 18");
-	scanf("");
+	for(i = 0; i < length; i++){
+		printf("%s%3d%s", "Element ", i, ": ");
+		Print(strings[i]);
+		printf("\n");
+	}
+	printf("#####################\n");
 }
 
 

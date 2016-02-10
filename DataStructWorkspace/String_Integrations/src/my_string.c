@@ -50,8 +50,8 @@ void Print(string_type str){
 
 string_type Concatenate(string_type str1, string_type str2){
 	string_type out = Create("", str1.capacity + str2.capacity);
-	copyString(out.element, str1.element, str1.length * sizeof(char));
-	copyString(&out.element[str1.length], str2.element, sizeof(char)*str2.length);
+	copyString(out.element, str1.element, str1.length-1);
+	copyString(&out.element[str1.length-1], str2.element,str2.length);
 	return out;
 }
 

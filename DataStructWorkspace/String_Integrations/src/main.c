@@ -9,8 +9,9 @@
 #include <stdio.h>
 
 int main(int argc, char* args[]){
-	string_type h = Create("Hello ", 6);
-	string_type w = Create("World!", 6);
+	string_type h = CreateStr("Hello ");
+	string_type w = CreateStr("World!");
+	//string_type combine = CreateStr("combination");
 	string_type combine = Concatenate(h,w);
 
 	string_type strings[] = {
@@ -44,6 +45,7 @@ int main(int argc, char* args[]){
 
 	int i;
 	for(i = 0; i < count ; i++){
+			printf("%s%2d%s", "Element ", i, ": ");
 			Print(strings[i]);
 			sortedList[i] = Clone(strings[i]);
 			printf("\n");
@@ -52,15 +54,20 @@ int main(int argc, char* args[]){
 	printf("#####################\n");
 
 	quickSort(sortedList, 0, count-1);
-	printf("%lu\n", sizeof(string_type));
+	printf("%s","Sorted List ");
+	printf("#####################\n");
 	for(i = 0; i < count; i++){
-			Print(sortedList[i]);
-			printf(" : ");
-			Print(strings[i]);
+		printf("%s%d%s", "Element ", i, ": ");
+					Print(sortedList[i]);
+			//printf(" : ");
+			//Print(strings[i]);
 			printf("\n");
 	}
 	getchar();
 	return 0;
+	printf("#####################\n");
+	printf("%s\n%s", "Choose two words to concatenate:", "Enter a number, 0 thru 18");
+	scanf("");
 }
 
 

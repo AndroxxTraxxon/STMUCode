@@ -3,7 +3,7 @@ A repo for all of my code after Intro to OOP @STMU
 
 This repository is organized by workspace: one workspace per class.
 
-For Data Structures and Algorithms, refer to the DataStructuresWorkspace:
+For Data Structures and Algorithms, refer to the DataStructWorkspace:
   GOTO DATA_STRUCTURES;
 
 DATA_STRUCTURES:

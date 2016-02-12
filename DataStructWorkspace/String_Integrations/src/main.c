@@ -74,7 +74,8 @@ int main(int argc, char* args[]){
 	string_type concat = Concatenate(sortedList[a], sortedList[b]);
 	printf("\n%s", "The concatenation of the two selected words is ");
 	Print(concat);
-
+	printf("\nPress [ENTER] to continue...");
+	getchar();
 	return 0;
 }
 

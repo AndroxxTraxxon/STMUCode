@@ -35,7 +35,7 @@ String_Integrations: $(OBJS) $(USER_OBJS)
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES) String_Integrations
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) String_Integrations
 	-@echo ' '
 
 .PHONY: all clean dependents

@@ -5,13 +5,15 @@
  *      Author: david
  */
 #include "my_string.h"
-#include "stdlib.h"
+//#include "stdlib.h"
 #include <stdio.h>
 
 void printStringList(string_type*, int length);
+void flushInputBuffer();
 
 int main(int argc, char* args[]){
 
+	printf("Hello World!");
 	string_type strings[] = {//make the list of strings
 			CreateStr("defunct"), //0
 			CreateStr("abeyance"),//1
@@ -60,6 +62,7 @@ int main(int argc, char* args[]){
 		scanf("%d", &input);
 		if(!(input >=0 && input < count)){
 			printf("%s", "\nInvalid input!");
+			flushInputBuffer();
 
 		}else{
 			if(a == -1){
@@ -76,6 +79,7 @@ int main(int argc, char* args[]){
 	Print(concat);
 	printf("\nPress [ENTER] to continue...");
 	getchar();
+	getchar();
 	return 0;
 }
 
@@ -90,4 +94,9 @@ void printStringList(string_type* strings, int length){
 	printf("#####################\n");
 }
 
+void flushInputBuffer(){
+	char c;
+	while((c = getchar()) != '\n')
+			/* discard */ ;
+}
 

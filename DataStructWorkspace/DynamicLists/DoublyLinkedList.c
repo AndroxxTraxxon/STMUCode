@@ -78,3 +78,22 @@ DLNode * GetTailDLNode(DLNode * head){
 	DLNode * pre = head->prev;
 	return pre;
 }
+
+int Remove(DLNode * node){
+	//Time complexity = O(1)
+	DLNode * prev = node->prev;
+	DLNode * next = node->next;
+	prev->next = next;
+	next->prev = prev;
+	int val = node->data;
+	free(node);
+	node = NULL;
+	return val;
+}
+
+void FreeDLChain(DLNode * head){
+	//Time complexity = O(n) where n is the number of elements in the
+	while(head!=NULL){
+		Remove(head->prev);
+	}
+}

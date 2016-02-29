@@ -7,6 +7,7 @@
 
 #include "Queue.h"
 #include <stdlib.h>
+
 void Enqueue(LNode * node, LNode * head){
 
 	if(head == NULL){

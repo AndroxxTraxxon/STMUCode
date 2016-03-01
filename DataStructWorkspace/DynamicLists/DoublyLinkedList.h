@@ -10,6 +10,8 @@
 
 #include <stdlib.h>
 typedef struct DLNode{
+	//the DLNode struct uses 8 + sizeof(<T>) for data type <T>.
+	//4 bytes per
 	int data;
 	struct DLNode * next;
 	struct DLNode * prev;

@@ -10,6 +10,7 @@
 
 #include <stdlib.h>
 typedef struct LNode{
+	//the LNode struct uses 4 + sizeof(<T>) bytes of memory per node.
 	int data;
 	struct LNode* next;
 }LNode;

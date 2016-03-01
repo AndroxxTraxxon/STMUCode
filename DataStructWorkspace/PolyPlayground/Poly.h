@@ -83,6 +83,11 @@ poly polyDiff(poly a, poly b);
  */
 poly polyQuot(poly a, poly b);
 
+
+/*
+ * polyPow: polyString
+ * returns a new polynomial that contains the given input polynomial raised to the power of the given number.
+ */
 poly polyPow(poly a, int pow);
 /*
  *	polyRoots : double *

@@ -8,6 +8,7 @@
 #ifndef POLY_H_
 #define POLY_H_
 
+#include <stdlib.h>
 
 typedef struct PolyTerm{
 	double power;
@@ -20,7 +21,6 @@ typedef struct PolyTerm{
 typedef struct PolyString{
 	int termCount;
 	term * head;
-	term polystr[];
 }poly;
 
 /*
@@ -39,15 +39,25 @@ poly NewPoly();
 /*
  * 	AddTerm : void
  * 	adds a new term to an existing struct PolyString
+ * 	will add the new node in with the larger powers closer to the head.
  */
-void AddTerm(double coeff, double power, poly nomial);
+void AddTerm(double coeff, double power, poly * nomial);
+
+/*
+ * 	AddTerm : void
+ * 	adds a new term to an existing struct PolyString
+ * 	will add the new node in with the larger powers closer to the head.
+ */
+void AppendTerm(term * node, poly * nomial);
 
 /*
  * 	RemoveTerm : void
  * 	removes the term from an existing struct PolyString that has the given power, if said PolyString
  * 	contains a term with that power.
  */
-void RemoveTerm(double power, poly nomial);
+
+
+void RemoveTerm(double power, poly * nomial);
 
 /*
  *	polyProd : poly
@@ -73,7 +83,7 @@ poly polyDiff(poly a, poly b);
  */
 poly polyQuot(poly a, poly b);
 
-
+poly polyPow(poly a, int pow);
 /*
  *	polyRoots : double *
  *	returns a double array containing the roots of a polynomial.
@@ -84,6 +94,17 @@ poly polyQuot(poly a, poly b);
  */
 double * polyRoots(poly p);
 
+/*
+ * 	printPoly : void
+ * 	prints the given poly nomial in a human-readable form
+ */
+void printPoly(poly nomial);
+
+/*
+ * 	printPoly : void
+ * 	prints the given poly nomial in a human-readable form
+ */
+void printTerm(term * t);
 
 
 #endif /* POLY_H_ */

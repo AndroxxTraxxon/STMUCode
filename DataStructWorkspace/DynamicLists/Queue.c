@@ -2,7 +2,7 @@
  * Queue.c
  *
  *  Created on: Feb 26, 2016
- *      Author: david
+ *      Author: David Culbreth
  */
 
 #include "Queue.h"

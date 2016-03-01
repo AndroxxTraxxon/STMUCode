@@ -1,8 +1,8 @@
 /*
- * LinkeList.c
+ * LinkedList.c
  *
  *  Created on: Feb 26, 2016
- *      Author: david
+ *      Author: David Culbreth
  */
 
 #include "LinkedList.h"

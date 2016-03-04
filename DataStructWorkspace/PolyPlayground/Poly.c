@@ -40,6 +40,7 @@ poly NewPoly(){
 }
 
 poly dupPoly(poly p){
+	//O(N) for N nodes
 	poly duplicate = NewPoly();
 	duplicate.termCount = p.termCount;
 
@@ -154,7 +155,7 @@ void RemoveTerm(double power, poly * nomial){
 }
 
 poly polySum(poly a, poly b){
-	//O(N)
+	//O(N^2)
 	poly result = NewPoly();
 	term * current = a.head;
 	while(current != NULL){
@@ -205,7 +206,9 @@ poly polyProd(poly a, poly b){
 	double coeff;
 	double pow;
 	while(aTerm != NULL){
+		//up to O(N)
 		while (bTerm != NULL){
+			//up to O(N)
 			coeff = aTerm->coeff * bTerm->coeff;
 			pow = aTerm->power + bTerm->power;
 			AddTerm(coeff, pow, &result); // O(N)
@@ -218,12 +221,26 @@ poly polyProd(poly a, poly b){
 	return result;
 }
 
+poly polyDeriv(poly a){
+	//O(N^2)
+	poly result = NewPoly();
+	term * daTerm = a.head;
+	while(daTerm != NULL){
+		AddTerm(daTerm->coeff*daTerm->power, (daTerm->power)-1, &result);
+		daTerm = daTerm->next;
+	}
+	return result;
+
+}
+
+/*
 poly polyQuot(poly a, poly b){
 	poly result = NewPoly();
-
+	//I guess we're not doing this one
 	//TODO: MAKE polyQuot functional
 	return result;
 }
+*/
 
 double * polyRoots(poly p){
 	double * results;
@@ -250,6 +267,7 @@ void printPoly(poly nomial){
 	}
 
 }
+
 void printTerm(term * node){
 
 	char varName[] = "X";

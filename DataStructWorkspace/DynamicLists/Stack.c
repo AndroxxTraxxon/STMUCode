@@ -6,6 +6,7 @@
  */
 
 #include <stdlib.h>
+#include "Stack.h"
 //remember that a Stack is defined as a <struct LNode*>
 
 void PushStack(int val, Stack top){

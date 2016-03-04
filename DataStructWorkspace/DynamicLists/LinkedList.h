@@ -12,7 +12,7 @@
 typedef struct LNode{
 	//the LNode struct uses 4 + sizeof(<T>) bytes of memory per node.
 	int data;
-	struct LNode* next;
+	struct LNode * next;
 }LNode;
 
 void InsertLNodeAtHead(int x, LNode * head);

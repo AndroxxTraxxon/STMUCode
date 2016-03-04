@@ -12,22 +12,23 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef void (*action)(char*);
+typedef void (*action)(int argc, char* args);
 
 typedef struct cmdlet{
 	action act;
 	char * name;
+	char * description;
 	struct cmdlet * nextcmd;
-
 }cmdlet;
 
 typedef struct cmdlist{
-	cmdlet* heads[24]; // one head for each letter of the alphabet
+	cmdlet * CMDHead; // one head for each letter of the alphabet
 
 }cmdlist;
 
 cmdlet * newCMD(char * name, action cmd);
-
+void printCMDList(cmdlist list);
+void addCMDtoList(cmdlet * cmd, cmdlist * list);
 
 
 #endif /* CMDLET_H_ */

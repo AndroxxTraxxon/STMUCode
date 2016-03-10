@@ -13,6 +13,8 @@
  * 	NewPolyTerm: struct PolyTerm *
  * 	creates a new struct PolyTerm with the given coefficient and power, then returns its pointer.
  */
+
+
 term * NewPolyTerm(double coeff, double power){
 	//O(1)
 	term * newTerm = (term *)malloc(sizeof(term));
@@ -37,6 +39,15 @@ poly NewPoly(){
 	newPoly.head = NULL;
 	//printf("Made a new Poly!");
 	return newPoly;
+}
+
+var * NewPolyVar(char * name){
+	var * pvar = (var *)malloc(sizeof(var));
+	pvar->name = name;
+	pvar->next = NULL;
+	pvar->prev = NULL;
+
+	return pvar;
 }
 
 poly dupPoly(poly p){
@@ -145,6 +156,9 @@ void RemoveTerm(double power, poly * nomial){
 		current = current->next;
 	}
 
+	if(nomial->head == current){
+		nomial->head = current->next;
+	}
 	if(current->prev != NULL)
 		current->prev->next = current->next;
 	if(current->next != NULL){
@@ -243,7 +257,7 @@ poly polyQuot(poly a, poly b){
 */
 
 double * polyRoots(poly p){
-	double * results;
+	double results[] = {0};
 
 	//TODO: MAKE polyRoots functional
 	return results;
@@ -294,5 +308,11 @@ void printTerm(term * node){
 		}else{
 			printf("%s%s%.2lf", varName,"^", node->power);
 		}
+	}
+}
+
+void FreePoly(poly * nomial){
+	while(nomial->head != NULL){
+		RemoveTerm(nomial->head->power, nomial);
 	}
 }

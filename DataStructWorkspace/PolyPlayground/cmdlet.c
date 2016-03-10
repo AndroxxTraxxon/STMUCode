@@ -51,6 +51,7 @@ void printCMDList(cmdlist list){
 		printf("NO COMMANDS: LIST EMPTY");
 		return;
 	}
+
 	cmdlet * current = list.CMDHead;
 	while(current != NULL){
 		printCMD(current, 1);
@@ -73,6 +74,9 @@ void printCMD(cmdlet * cmd, int detail){
 	default:
 		break;
 	}
+}
 
+void freeCMD(cmdlet * cmd){
+	free(cmd);
 }
 

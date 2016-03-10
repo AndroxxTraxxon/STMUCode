@@ -29,6 +29,7 @@ typedef struct cmdlist{
 cmdlet * newCMD(char * name, action cmd);
 void printCMDList(cmdlist list);
 void addCMDtoList(cmdlet * cmd, cmdlist * list);
+void freeCMD(cmdlet * cmd);
 
 
 #endif /* CMDLET_H_ */

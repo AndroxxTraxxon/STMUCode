@@ -23,6 +23,13 @@ typedef struct PolyString{
 	term * head;
 }poly;
 
+typedef struct PolyVar{
+	char * name;
+	poly * nomial;
+	struct PolyVar * next;
+	struct PolyVar * prev;
+}var;
+
 /*
  * 	NewPolyTerm: struct PolyTerm *
  * 	creates a new struct PolyTerm with the given coefficient and power, then returns its pointer.
@@ -34,6 +41,8 @@ term * NewPolyTerm(double coeff, double power);
  * 	creates a new struct PolyString and returns it.
  */
 poly NewPoly();
+
+var * NewPolyVar(char * name);
 
 
 /*
@@ -110,6 +119,8 @@ void printPoly(poly nomial);
  * 	prints the given poly nomial in a human-readable form
  */
 void printTerm(term * t);
+
+void FreePoly(poly * nomial);
 
 
 #endif /* POLY_H_ */

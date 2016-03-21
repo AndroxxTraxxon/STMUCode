@@ -4,8 +4,11 @@
  *  Created on: Mar 2, 2016
  *      Author: david
  */
-
+#include <stdio.h>
+#include <stdlib.h>
 #include "debug.h"
+
+void clearInputBuffer(void);
 
 void dbgHalt(char * message){
 	if(!message){
@@ -15,8 +18,7 @@ void dbgHalt(char * message){
 	}
 	clearInputBuffer();
 	printf("Press any key to continue");
-	getch();
-	exit(1);
+	exit(EXIT_FAILURE);
 }
 
 void clearInputBuffer (void)

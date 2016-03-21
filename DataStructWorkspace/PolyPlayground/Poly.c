@@ -247,19 +247,16 @@ poly polyDeriv(poly a){
 
 }
 
-/*
-poly polyQuot(poly a, poly b){
-	poly result = NewPoly();
-	//I guess we're not doing this one
-	//TODO: MAKE polyQuot functional
-	return result;
-}
-*/
-
 double * polyRoots(poly p){
 	double results[] = {0};
+	int rootCount = 0;
+	term * vals = NULL;
+	while(rootCount < p.head->power){
+		//the number of roots will be limited by the highest power of the polynomial.
+		//TODO: MAKE polyRoots functional
 
-	//TODO: MAKE polyRoots functional
+	}
+
 	return results;
 }
 

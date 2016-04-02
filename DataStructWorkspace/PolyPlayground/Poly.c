@@ -139,6 +139,7 @@ void AppendTerm(term * node, poly * nomial){
 			if(node->next != NULL)
 				node->next->prev = node;
 		}else{
+			//new term should be added BEFORE the current term
 			node->next = current;
 			node->prev = current->prev;
 			current->prev = node;

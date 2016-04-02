@@ -22,7 +22,7 @@ var * vars = NULL;
 int die, cmdFound, varFound;
 const char DELIMITERS[] = {' ', '.', ',', ';', ':', '!', '\n', '\0'};
 
-int maintwo(){
+int main(){
 	poly p = NewPoly();
 	AddTerm(35, 3, &p);
 	AddTerm(25, 2, &p);
@@ -36,7 +36,7 @@ int maintwo(){
 	return 0;
 }
 
-int main(){
+int maintwo(){
 	initCommands();
 	char inputBuffer[1024];
 	char * firstWord;

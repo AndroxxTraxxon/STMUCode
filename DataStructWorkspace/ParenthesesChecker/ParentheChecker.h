@@ -22,15 +22,15 @@ typedef struct charStack{
 
 stack newStack();
 
-void push(term * t, stack s);
+void push(term * t, stack * s);
 /*
  * push(t,s) will push term t onto the top of stack s.
  */
-term pop(stack s);
+term * pop(stack * s);
 /*
  * pop(h) will remove the top term from stack s and return it.
  */
-char peek(stack s);
+char peek(stack * s);
 /*
  * peek(h) will return the char value of the top term in the stack s.
  */

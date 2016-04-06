@@ -36,7 +36,7 @@ int main(){
 	return 0;
 }
 
-int maintwo(){
+int maintwo(){//this one didn't work... too complex.
 	initCommands();
 	char inputBuffer[1024];
 	char * firstWord;

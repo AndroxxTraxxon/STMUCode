@@ -14,7 +14,6 @@ stack newStack(){
 	return s;
 }
 
-
 void pushC(char c, stack * s){
 	term * t = malloc(sizeof(term));
 	t->c = c;
@@ -60,11 +59,11 @@ int checkAny(int delimPairCount, char ** delimiters, long textLength, char * tex
 	char * currentDelimiter;
 	int textIndex, delimIndex, delimMatch, delimLen;
 	for(textIndex = 0; textIndex < textLength; textIndex++){//go through the input file, character by character
+		if(*(text + textIndex)==-1/*'ÿ'*/)//for some reason, a long string of "ÿÿÿÿÿÿÿÿ" kept showing up at the end of the file. I dunno why.
+					break;
+
 		printf("%c", *(text+textIndex));
 		//if the character is a null terminating character, then break from the loop. that's the end of the file.
-		if(*(text + textIndex)=='\0')
-			break;
-
 		//for each character:
 
 		for(delimIndex = 0; delimIndex < (delimPairCount * 2); delimIndex++){//check against all possible opener/closer combinations.

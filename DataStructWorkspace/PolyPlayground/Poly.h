@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 typedef struct PolyTerm{
-	double power;
+	int power;
 	double coeff;
 	struct PolyTerm * next;
 	struct PolyTerm * prev;
@@ -34,7 +34,7 @@ typedef struct PolyVar{
  * 	NewPolyTerm: struct PolyTerm *
  * 	creates a new struct PolyTerm with the given coefficient and power, then returns its pointer.
  */
-term * NewPolyTerm(double coeff, double power);
+term * NewPolyTerm(double coeff, int power);
 
 /*
  * 	NewPoly : struct PolyString
@@ -50,7 +50,7 @@ var * NewPolyVar(char * name);
  * 	adds a new term to an existing struct PolyString
  * 	will add the new node in with the larger powers closer to the head.
  */
-void AddTerm(double coeff, double power, poly * nomial);
+void AddTerm(double coeff, int power, poly * nomial);
 
 /*
  * 	AddTerm : void
@@ -66,7 +66,7 @@ void AppendTerm(term * node, poly * nomial);
  */
 
 
-void RemoveTerm(double power, poly * nomial);
+void RemoveTerm(int power, poly * nomial);
 
 /*
  *	polyProd : poly
@@ -106,8 +106,10 @@ poly polyPow(poly a, int pow);
  *	such that an array structured as such [n, k1, k2, k3, ..., kn]
  *	will correspond to an the following product of sums: (x - k1)(x - k2)(x - k3)...(x - kn)
  */
-double * polyRoots(poly p);
+double polyRoot(poly p, double initPosition, int maxIterates);
 
+
+double polyValue(poly p, double key);
 /*
  * 	printPoly : void
  * 	prints the given poly nomial in a human-readable form

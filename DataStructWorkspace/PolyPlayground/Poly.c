@@ -8,6 +8,7 @@
 #include "Poly.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 /*
  * 	NewPolyTerm: struct PolyTerm *
@@ -15,7 +16,7 @@
  */
 
 
-term * NewPolyTerm(double coeff, double power){
+term * NewPolyTerm(double coeff, int power){
 	//O(1)
 	term * newTerm = (term *)malloc(sizeof(term));
 	newTerm->coeff = coeff;
@@ -50,7 +51,7 @@ var * NewPolyVar(char * name){
 	return pvar;
 }
 
-poly dupPoly(poly p){
+void dupPoly(poly p, poly * q){
 	//O(N) for N nodes
 	poly duplicate = NewPoly();
 	duplicate.termCount = p.termCount;
@@ -63,10 +64,10 @@ poly dupPoly(poly p){
 			next = next->next;
 		}
 	}
-	return duplicate;
+	q = &duplicate;
 }
 
-void AddTerm(double coeff, double power, poly * nomial){
+void AddTerm(double coeff, int power, poly * nomial){
 	//worst case O(N)
 	if(coeff != 0){
 		if(nomial->head == NULL){
@@ -80,7 +81,7 @@ void AddTerm(double coeff, double power, poly * nomial){
 			current = current->next;
 		}
 		//this should bring us within one node of where we want to be. close enough.
-		double diff = power - current->power;
+		int diff = power - current->power;
 
 		if(diff == 0){
 			current->coeff+= coeff;
@@ -150,7 +151,7 @@ void AppendTerm(term * node, poly * nomial){
 	}
 }
 
-void RemoveTerm(double power, poly * nomial){
+void RemoveTerm(int power, poly * nomial){
 	//worst case: O(N)
 	term * current = nomial->head;
 	while(current != NULL && current->power != power){
@@ -204,7 +205,8 @@ poly polyDiff(poly a, poly b){
 }
 
 poly polyPow(poly a, int pow){
-	poly resultant = dupPoly(a);
+	poly resultant;
+	dupPoly(a, &resultant);
 	int i;
 	for(i=0; i < pow-1; i++){
 		resultant = polyProd(resultant, a);
@@ -248,17 +250,27 @@ poly polyDeriv(poly a){
 
 }
 
-double * polyRoots(poly p){
-	double results[] = {0};
-	int rootCount = 0;
-	term * vals = NULL;
-	while(rootCount < p.head->power){
-		//the number of roots will be limited by the highest power of the polynomial.
-		//TODO: MAKE polyRoots functional
+double polyRoot(poly p, double initPosition, int maxIterates){
+	int iterateCount = 0;
+	double result = initPosition;
+	double currentValue = 999;
+	poly derivative = polyDeriv(p);
+	do{
+		maxIterates++;
+		result -= polyValue(p, result)/polyValue(derivative, result);
+		currentValue = polyValue(p,result);
+	}while((currentValue > 0.0001 || currentValue < -0.0001) && iterateCount < maxIterates);
+	return result;
+}
 
+double polyValue(poly p, double key){
+	double result = 0;
+	term * daTerm = p.head;
+	while(daTerm != NULL){
+		result += (daTerm->coeff * pow(key, daTerm->power));
+		daTerm = daTerm->next;
 	}
-
-	return results;
+	return result;
 }
 
 void printPoly(poly nomial){
@@ -300,11 +312,8 @@ void printTerm(term * node){
 	if(node->power !=0){
 		if(node->power == 1){
 			printf("%s", varName);
-		}
-		else if((node->power-(int)node->power)==0){
-			printf("%s%s%.0lf", varName,"^", node->power);
 		}else{
-			printf("%s%s%.2lf", varName,"^", node->power);
+			printf("%s%s%d", varName,"^", node->power);
 		}
 	}
 }

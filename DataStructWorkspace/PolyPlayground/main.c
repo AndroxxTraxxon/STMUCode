@@ -23,16 +23,20 @@ int die, cmdFound, varFound;
 const char DELIMITERS[] = {' ', '.', ',', ';', ':', '!', '\n', '\0'};
 
 int main(){
+	double initPosition = 3;
+	int maxIterates = 15;
+
 	poly p = NewPoly();
-	AddTerm(35, 3, &p);
-	AddTerm(25, 2, &p);
-	AddTerm(15, 1, &p);
-	AddTerm(5, 0, &p);
+	AddTerm(1, 5, &p);
+	AddTerm(-6, 4, &p);
+	AddTerm(8, 3, &p);
+	AddTerm(8, 2, &p);
+	AddTerm(4, 1, &p);
+	AddTerm(-4, 0, &p);
 
-
-	poly q = NewPoly();
-
+	double root = polyRoot(p, initPosition, maxIterates);
 	printPoly(p);
+	printf("The nearest root to %lf is %lf",initPosition, root);
 	return 0;
 }
 
